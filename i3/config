@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:Fira Code 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -41,12 +41,12 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
+# start rofi (a program launcher)
 bindsym $mod+d exec rofi -show run
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
@@ -106,12 +106,13 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "WEB"
-set $ws2 "CODE"
-set $ws3 "TERM"
-set $ws4 "DISCORD"
-set $ws5 "TRASH"
-set $ws6 "6"
+
+set $ws1 "1: www"
+set $ws2 "2: CDE"
+set $ws3 "3: TRM"
+set $ws4 "4: DIS"
+set $ws5 "5: IDK"
+set $ws6 "6: MSC"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
@@ -179,10 +180,18 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	position top
-        status_command i3status
+        #status_command i3status
+	status_command ~/.config/bumblebee-status/bumblebee-status \
+ 	-t iceberg-rainbow \
+ 	-m datetime hostname disk memory spotify	
 	colors {
-		background #00000
+		background #ADD8E6
 		separator #C3909B
+		
+		focused_workspace  #444444 #444444 #ffb6c1
+		active_workspace   #333333 #5f676a #ffffff
+		inactive_workspace #333333 #222222 #888888
+		urgent_workspace   #2f343a #900000 #ffffff
 	}
 	
 }
@@ -192,6 +201,7 @@ gaps inner 11
 
 for_window [class="^.*"] border pixel 3
                                                                                                                                                                                                                      
-exec picom -b -f
+
 exec setxkbmap us
-exec feh --bg-fill /home/omarortiz/Documentos/wallpapers/inside.png
+exec feh --bg-fill /home/omarortiz/Documentos/wallpapers/cyberpunk.jpg
+
