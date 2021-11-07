@@ -107,12 +107,12 @@ bindsym $mod+a focus parent
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 
-set $ws1 "1:   "
-set $ws2 "2:   "
-set $ws3 "3:   "
-set $ws4 "4:   "
-set $ws5 "5:   "
-set $ws6 "6: MSC"
+set $ws1 "1:     "
+set $ws2 "2:     "
+set $ws3 "3:     "
+set $ws4 "4:     "
+set $ws5 "5:     "
+set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
@@ -180,17 +180,18 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
 	position top
+	strip_workspace_numbers yes
         #status_command i3status
-	status_command ~/.config/bumblebee-status/bumblebee-status \
- 	-t greyish-powerline \
- 	-m datetime hostname disk memory uptime	
+	status_command i3blocks
+ 	#-t greyish-powerline \
+ 	#-m datetime hostname disk memory uptime	
 	colors {
-		background #404040
+		background #2e3440
 		separator #C3909B
 		
-		focused_workspace  #444444 #444444 #ffb6c1
+		focused_workspace  #3b4252 #3b4252 #d8dee9
 		active_workspace   #333333 #5f676a #ffffff
-		inactive_workspace #333333 #222222 #888888
+		inactive_workspace #2e3440 #2e3440 #888888
 		urgent_workspace   #2f343a #900000 #ffffff
 	}
 	
@@ -200,9 +201,10 @@ gaps inner 15
 
 client.focused #808080 #808080 #808080 #FFC0CB
 
-for_window [class="^.*"] border pixel 5
+for_window [class="^.*"] border pixel 1
                                                                                                                                                                                                                      
 
 exec setxkbmap us
-exec feh --bg-fill /home/pcsa/Documents/art.jpg
+exec feh --bg-fill /home/pcsa/Documents/wallpapers/forest.jpg
+
 
