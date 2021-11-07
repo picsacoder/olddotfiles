@@ -1,17 +1,18 @@
-# i3wm Config
+# 🍒 Nord Theme For i3WM 🍒
 
 
 ## Install
-*NOTE: If you don't have <a href="https://github.com/tobi-wan-kenobi/bumblebee-status"> bumblebee-status </a> this config will not work
+*NOTE: You need to have installed <a href="https://github.com/vivien/i3blocks"> i3blocks </a> and fontawesome icons
 
-``
-$ git clone https://github.com/picsacoder/my-i3wm-conf
-``
+```
+$ git clone https://github.com/picsacoder/dotfiles
+```
 
-``
-$ cp -r my-i3-conf/i3/config .config/i3/config
-``
+```
+$ cp -r dotfiles/i3/config .config/i3/config
+```
 
 <p>You only need to press Win+R or Alt+R to reload your config and you should see something like this:</p>
 
-<img src="i3final.png"> </img>
+# Preview:
+<img src="https://pbs.twimg.com/media/FDj8K3cWQAEW1SE?format=jpg&name=large"> </img>
